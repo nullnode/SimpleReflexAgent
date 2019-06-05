@@ -1,0 +1,10 @@
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\bin\Debug\SimpleReflexVacuumAgent.exe.config
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\bin\Debug\SimpleReflexVacuumAgent.exe
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\bin\Debug\SimpleReflexVacuumAgent.pdb
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.csprojAssemblyReference.cache
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.Properties.Resources.resources
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.csproj.GenerateResource.cache
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.exe
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.pdb
+C:\Users\Alex\Desktop\Artificial Intelligence\SimpleReflexVacuumAgent\SimpleReflexVacuumAgent\obj\Debug\SimpleReflexVacuumAgent.AI.resources
