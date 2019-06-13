@@ -27,6 +27,7 @@ namespace SimpleReflexVacuumAgent
         bool checkRight = false; // both are set to false because the ai does not know whether they are clean or not, this simply means they are unchecked
         string choice;
         PictureBox location;
+        int performance = 0;
 
         public AI()
         {
@@ -73,6 +74,16 @@ namespace SimpleReflexVacuumAgent
                     PerceptAsync(location);
                     break;
 
+                case "Environment 7":
+                    Environment7Async();
+                    PerceptAsync(location);
+                    break;
+
+                case "Environment 8":
+                    Environment8Async();
+                    PerceptAsync(location);
+                    break;
+
                 default:
                     break;
             }
@@ -94,20 +105,33 @@ namespace SimpleReflexVacuumAgent
                 {
                     await SuckAsync(dirt);
                 }
-                else // if there is no dirt in this room but we know dirt exists somewhere, let's move to the room we aren't in
+                else // if there is no dirt in this room then we'll move on to the next room!
                 {
+                    //await PerformanceAsync();
                     await MoveAsync(dirt);
                 }
             }
 
-            else // our agent has learned that both rooms have been checked and cleaned, he will pause for 10 seconds and then check the rooms again
+            else // our agent has learned that both rooms have been checked and cleaned, he will now take a well deserved rest!
             {
                 textBox1.AppendText("Rooms are cleaned");
+                await PerformanceAsync();
             }
         }
 
+        public async Task PerformanceAsync()
+        {
+            performance++;
+            textBox2.Text = performance.ToString();
+        }
+
+        // The agents movement relies on alternating between the visibility of one of two vacuum images, this can be visualized abstractly as the agent
+        // poking his head into each room and looking around. The way we keep track of where the agent is relies on a clever use of naming schemes between
+        // the vacuums and the two dirt patches. If we know which position the vacuum cleaner is in, then logically we can use that same positional information
+        // for the agent to detect if he sees any dirt near him.
         public async Task MoveAsync(PictureBox location)
         {
+            // the following 2 checks will preemptively allow the AI to learn where he WAS, the third if statement is the AI's way of seeing if he's been in both rooms
             if ((string)location.Name == "left")
             {
                 checkLeft = true;
@@ -120,12 +144,14 @@ namespace SimpleReflexVacuumAgent
             if (checkLeft == true && checkRight == true)
             {
                 textBox1.AppendText("Rooms are cleaned");
+                await PerformanceAsync();
                 return;
             }
 
+            // After the agent learns where he's coming from (above), he will then move accordingly to the other environment. We set our location variable
+            // to the corresponding area and visually move the agent.
             if (location == right)
             {
-                //checkRight = true;
                 textBox1.AppendText("Moving left \n");
                 await Task.Delay(1000);
                 vacuumRight.Visible = false;
@@ -134,7 +160,6 @@ namespace SimpleReflexVacuumAgent
             }
             else if(location == left)
             {
-                //checkLeft = true;
                 textBox1.AppendText("Moving right \n");
                 await Task.Delay(1000);
                 vacuumRight.Visible = true;
@@ -142,10 +167,14 @@ namespace SimpleReflexVacuumAgent
                 location = right;
             }
 
+            // Once the agent is moved, he'll percept with the new information about his location.
            await PerceptAsync(location);
         }
 
         
+        // We're taking in a side (left or right) which corresponds to the location of dirt. The agent will remove the dirt and then keep track of where
+        // he just cleaned. It's important for the agent to learn when he either Moves or Sucks, since different scenarios can occur depending on the
+        // initial dirt/agent location.
         public async Task SuckAsync(PictureBox side)
         {
             textBox1.AppendText("Cleaning " + (string)side.Name + "\n");
@@ -220,9 +249,30 @@ namespace SimpleReflexVacuumAgent
             location = left;
         }
 
+        // vacuum on left side, no dirt on left or right
+        private async Task Environment7Async()
+        {
+            right.Visible = false;
+            left.Visible = false;
+            vacuumLeft.Visible = true;
+            location = left;
+        }
+
+        // vacuum on right side, no dirt on left or right
+        private async Task Environment8Async()
+        {
+            right.Visible = false;
+            left.Visible = false;
+            vacuumRight.Visible = true;
+            location = right;
+        }
+
+        // reset everything
         private void button2_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
+            textBox2.Text = "";
+            performance = 0;
             vacuumLeft.Visible = false;
             vacuumRight.Visible = false;
             left.Visible = false;
@@ -233,7 +283,7 @@ namespace SimpleReflexVacuumAgent
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("dont ever click me again, this is your last warning");
         }
 
     }

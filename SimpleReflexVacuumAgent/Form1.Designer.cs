@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vacuumRight)).BeginInit();
@@ -50,9 +52,9 @@
             this.left.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("left.BackgroundImage")));
             this.left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.left.InitialImage = null;
-            this.left.Location = new System.Drawing.Point(58, 284);
+            this.left.Location = new System.Drawing.Point(59, 284);
             this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(215, 84);
+            this.left.Size = new System.Drawing.Size(215, 113);
             this.left.TabIndex = 0;
             this.left.TabStop = false;
             this.left.Visible = false;
@@ -63,7 +65,7 @@
             this.right.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.right.Location = new System.Drawing.Point(312, 284);
             this.right.Name = "right";
-            this.right.Size = new System.Drawing.Size(215, 84);
+            this.right.Size = new System.Drawing.Size(215, 113);
             this.right.TabIndex = 1;
             this.right.TabStop = false;
             this.right.Visible = false;
@@ -93,9 +95,9 @@
             this.vacuumRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vacuumRight.BackgroundImage")));
             this.vacuumRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.vacuumRight.InitialImage = null;
-            this.vacuumRight.Location = new System.Drawing.Point(349, 63);
+            this.vacuumRight.Location = new System.Drawing.Point(347, 63);
             this.vacuumRight.Name = "vacuumRight";
-            this.vacuumRight.Size = new System.Drawing.Size(150, 215);
+            this.vacuumRight.Size = new System.Drawing.Size(147, 215);
             this.vacuumRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.vacuumRight.TabIndex = 5;
             this.vacuumRight.TabStop = false;
@@ -106,9 +108,9 @@
             this.vacuumLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vacuumLeft.BackgroundImage")));
             this.vacuumLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.vacuumLeft.InitialImage = null;
-            this.vacuumLeft.Location = new System.Drawing.Point(90, 63);
+            this.vacuumLeft.Location = new System.Drawing.Point(88, 63);
             this.vacuumLeft.Name = "vacuumLeft";
-            this.vacuumLeft.Size = new System.Drawing.Size(150, 215);
+            this.vacuumLeft.Size = new System.Drawing.Size(154, 215);
             this.vacuumLeft.TabIndex = 6;
             this.vacuumLeft.TabStop = false;
             this.vacuumLeft.Visible = false;
@@ -125,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(117, 20);
             this.label1.Name = "label1";
@@ -137,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(370, 20);
             this.label2.Name = "label2";
@@ -155,17 +157,40 @@
             "Environment 3",
             "Environment 4",
             "Environment 5",
-            "Environment 6"});
-            this.checkedListBox1.Location = new System.Drawing.Point(708, 198);
+            "Environment 6",
+            "Environment 7",
+            "Environment 8"});
+            this.checkedListBox1.Location = new System.Drawing.Point(708, 122);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 124);
             this.checkedListBox1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(718, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Performance";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(748, 86);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(30, 30);
+            this.textBox2.TabIndex = 13;
             // 
             // AI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 409);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -177,7 +202,7 @@
             this.Controls.Add(this.right);
             this.Controls.Add(this.left);
             this.Name = "AI";
-            this.Text = "Form1";
+            this.Text = "Simple Reflex Agent By Alex Henson";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.right)).EndInit();
@@ -199,6 +224,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
